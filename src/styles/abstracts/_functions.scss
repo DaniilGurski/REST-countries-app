@@ -1,0 +1,20 @@
+@use "sass:math";
+
+// convert the px value to rem. The $pixel argument must not have a unit.
+@function rem($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16) * 1rem;
+    } @else {
+        @error "Value with a unit passed to rem function"
+    }
+};
+
+
+// convert the px value to em. The $pixel argument must not have a unit.
+@function em($pixel) {
+    @if math.is-unitless($pixel) {
+        @return math.div($pixel, 16) * 1em;
+    } @else {
+        @error "Value with a unit passed to em function"
+    }
+}
