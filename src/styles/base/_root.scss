@@ -1,7 +1,0 @@
-@use "../abstracts/" as *;
-@use "../utils" as *;
-
-:root {
-    @include colors($colors);
-    @include type($typescales);
-}

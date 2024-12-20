@@ -1,6 +1,6 @@
 import { SelectProps } from "react-aria-components"
 
-type Element = "select" | "button";
+type Element = "select" | "button" | "popover" | "listbox";
 
 
 export type MySelectProps = SelectProps & {

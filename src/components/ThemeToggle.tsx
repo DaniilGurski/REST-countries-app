@@ -7,8 +7,9 @@ export default function ThemeToggle({ ...rest }) {
     const [darkModeToggled, setDarkModeToggled] = useAtom(darkModeToggledAtom);
 
     return (
-        <ToggleButton {...rest} >
+        <ToggleButton className="theme-toggle flex-flow align-center fs-200" {...rest}>
             <CiDark />
+            Dark Mode
         </ToggleButton>
     )
 }

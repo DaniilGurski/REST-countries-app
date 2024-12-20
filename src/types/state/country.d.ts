@@ -24,3 +24,26 @@ export type Country = {
   population: number;
   flags: Flags,
 }
+
+
+export type CountryExtended = {
+  name: {
+    common: string;
+    official: string;
+  };
+  capital: string[];
+  region: string;
+  population: number;
+  flags: Flags,
+  borders: string[],
+  currencies: {
+    [key: string]: {
+      name: string;
+      symbol: string;
+    }
+  },
+  languages: {
+    [key: string]: string;
+  },
+  tld: string[],
+}

@@ -17,7 +17,7 @@ export const fetchCountriesByRegion = async (region: string) => {
 
 export const fetchCountryDetails = async (name: string) => {
     return await fetchThis(
-        `https://restcountries.com/v3.1/${name}?fields=name,native-name,population,region,sub-region,capital,tld,currencies,languages,borders`, 
+        `https://restcountries.com/v3.1/name/${name}?fields=name,flags,native-name,population,region,sub-region,capital,tld,currencies,languages,borders`, 
         "Failed to fetch one"
     )
 }

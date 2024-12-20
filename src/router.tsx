@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "./App";
 import AllCountriesView from "./pages/AllCountriesView";
-import CountryView from "./pages/CountryView";
+import CountryDetails from "./pages/CountryDetails";
 
 export const router = createBrowserRouter([
     {
@@ -16,8 +16,8 @@ export const router = createBrowserRouter([
             },
 
             {
-                path: "country/:name",
-                element: <CountryView />
+                path: "country/:countryName",
+                element: <CountryDetails />
             }
         ]
     }

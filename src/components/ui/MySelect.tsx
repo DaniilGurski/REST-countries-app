@@ -10,8 +10,8 @@ export default function MySelect({classNames, label, options, selectValueText, .
                 <IoChevronDownSharp />
             </Button>
 
-            <Popover>
-                <ListBox items={options}>
+            <Popover className={classNames.popover} crossOffset={0} offset={10}>
+                <ListBox className={classNames.listbox} items={options}>
                     {
                         ({ key, value }) => (
                             <ListBoxItem key={key} textValue={value}> 

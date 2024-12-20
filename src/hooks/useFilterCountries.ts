@@ -1,11 +1,8 @@
 import { useEffect } from "react";
 import { useAtom, useAtomValue } from "jotai";
 import { countriesAtom, searchedCountryNameAtom, filteredCountriesAtom } from "../services/state/atoms";
-import { Country } from "../types/state/country";
+import { isValidCountries } from "../types/typeguards";
 
-function isValidCountries(countries: unknown): countries is Country[] {
-    return (Array.isArray(countries) && countries.length > 0); 
-}
 
 export function useFilteredCountries() {
     const {data: countries} = useAtomValue(countriesAtom);

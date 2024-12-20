@@ -26,7 +26,9 @@ export default function Filter() {
         <MySelect
             classNames={{
                 "select": "filter",
-                "button": "filter__button"
+                "button": "filter__button flex-flow justify-sb align-center box-shadow",
+                "popover": "filter__popover bg-primary-100 box-shadow",
+                "listbox": "filter__listbox grid-flow"
             }}
             label="Filter by Region"
             options={options}

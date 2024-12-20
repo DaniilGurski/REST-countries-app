@@ -22,11 +22,12 @@ export default function AllCountriesView() {
 
 
     return (
-        <div className="container"> 
-            <header>
+        <div className="all-countries container grid-flow"> 
+            <header className="flex-flow justify-sb flex-wrap">
                 <MySearchField
                 label="search for a country" 
                 placeholder="Search for a country…"
+                className="search-field bg-primary-100 flex-flow align-center"
                 onChange={(value) => {
                     setSearchedCountryName(value);
                 }} />
@@ -34,8 +35,8 @@ export default function AllCountriesView() {
                 <Filter />
             </header>
 
-            <section>
-                <ul> 
+            <section className="">
+                <ul className="country-list" role="list"> 
                     {
                         filteredCountries.map((country) => {
                             return (
