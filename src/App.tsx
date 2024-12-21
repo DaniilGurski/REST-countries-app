@@ -6,7 +6,10 @@ export default function App() {
   return (
     <main>
         <PrimaryHeader />
-        <Outlet /> 
+
+        <div className="container">
+          <Outlet /> 
+        </div> 
     </main>
     
   )

@@ -30,9 +30,16 @@ export type CountryExtended = {
   name: {
     common: string;
     official: string;
+    nativeName: {
+      [key: string]: {
+        common: string;
+        official: string;
+      }
+    }
   };
   capital: string[];
   region: string;
+  subregion: string;
   population: number;
   flags: Flags,
   borders: string[],

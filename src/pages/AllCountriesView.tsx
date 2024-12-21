@@ -22,7 +22,7 @@ export default function AllCountriesView() {
 
 
     return (
-        <div className="all-countries container grid-flow"> 
+        <div className="all-countries grid-flow"> 
             <header className="flex-flow justify-sb flex-wrap">
                 <MySearchField
                 label="search for a country" 
