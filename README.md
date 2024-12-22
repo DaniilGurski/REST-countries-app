@@ -1,50 +1,68 @@
-# React + TypeScript + Vite
+# REST Countries API app
+Applications with the ability to search and view country information based on REST API countries.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## My process
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Built with
 
-- Configure the top-level `parserOptions` property like this:
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- Mobile-first workflow
+- [React](https://reactjs.org/) - JS library
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
+
+### What I learned
+
+#### New react libraries
+In this project, I tried two new libraries. One is called **react aria** which helped me to make components like region select menu more accessible. I often find myself asking how to make a component better in this regard, but sometimes it's just hard to remember all the details for each component which is time consuming. The react aria library has helped a lot with this. Then I tried the **react icons** library, which was also a nice bonus in development.
+
+
+#### Index signatures in TS
+I also learned about **index signatures** in typescript. As I understand it, this is used when you have a number of keys that look slightly different in similar objects, hence can't be precisely predicted, but have the same value. It can look something like this:
+```ts
+export type CountryExtended = {
+  name: {
+    common: string;
+    official: string;
+    nativeName: {
+      [key: string]: {
+        common: string;
+        official: string;
+      }
+    }
+  };
+  capital: string[];
+  region: string;
+  subregion: string;
+  population: number;
+  flags: Flags,
+  borders: string[],
+  // this is index signature
+  currencies: {
+    [key: string]: {
+      name: string;
+      symbol: string;
+    }
   },
-})
+  languages: {
+    [key: string]: string;
+  },
+  tld: string[],
+}
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Useful resources
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- [React Aria Docs](https://react-spectrum.adobe.com/react-aria/index.html)
