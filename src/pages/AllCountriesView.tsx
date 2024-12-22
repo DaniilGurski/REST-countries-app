@@ -1,24 +1,42 @@
 import { useEffect } from 'react'
 import { useFilteredCountries } from '../hooks/useFilterCountries'
 import { useAtom, useAtomValue, useSetAtom } from 'jotai'
-import { countriesAtom, searchedCountryNameAtom, regionAtom } from '../services/state/atoms'
+import { countriesAtom, searchedCountryNameAtom, regionAtom, currentCountryPageAtom } from '../services/state/atoms'
 
 import MySearchField from "../components/ui/MySearchField"
 import Filter from '../components/Filter'
 import CountryCard from '../components/CountryCard'
+import Pagination from '../components/Pagination'
 
 export default function AllCountriesView() {
     const { refetch }: { data: unknown, refetch: () => {}} = useAtomValue(countriesAtom); 
     const setSearchedCountryName = useSetAtom(searchedCountryNameAtom);
     const [region] = useAtom(regionAtom);
-    const filteredCountries = useFilteredCountries();
+    const [currentCountryPage, setCurrentCountryPage] = useAtom(currentCountryPageAtom);
 
+    const filteredCountries = useFilteredCountries();
+    const countriesPerPage = 10
+    const pageNumber = Math.ceil(filteredCountries.length / countriesPerPage);
+    const endIndex = currentCountryPage * countriesPerPage;
+    const startIndex = endIndex - countriesPerPage;
+    const currentCountries = filteredCountries.slice(startIndex, endIndex); 
 
     useEffect(() => {
         if (region) {
             refetch();
+            setCurrentCountryPage(1);
         }
     }, [region])
+
+
+    useEffect(() => {
+        if (filteredCountries.length === 0) {
+            setCurrentCountryPage(0);
+        
+        } else if (filteredCountries.length > 0 && (currentCountryPage > pageNumber || currentCountryPage === 0)) {
+            setCurrentCountryPage(1);
+        }
+    }, [filteredCountries])
 
 
     return (
@@ -38,7 +56,7 @@ export default function AllCountriesView() {
             <section className="">
                 <ul className="country-list" role="list"> 
                     {
-                        filteredCountries.map((country) => {
+                        currentCountries.map((country) => {
                             return (
                                 <li key={country.name.common}> 
                                     <CountryCard
@@ -51,6 +69,8 @@ export default function AllCountriesView() {
                     }
                 </ul>
             </section>
+
+            <Pagination pageNumber={pageNumber} />
         </div>
     )
 }

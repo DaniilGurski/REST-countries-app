@@ -9,6 +9,7 @@ export const selectedCountryAtom = atom("");
 export const searchedCountryNameAtom = atom("");
 export const filteredCountriesAtom= atom<Country[]>([]); 
 export const darkModeToggledAtom = atom(false);
+export const currentCountryPageAtom = atom(0);
 
 export const countriesAtom = atomWithQuery((get) => ({
     queryKey: ['countries', get(regionAtom)],

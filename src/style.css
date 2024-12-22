@@ -166,6 +166,12 @@ select {
     justify-content: space-between;
 }
 
+
+.justify-end {
+    display: flex;
+    justify-content: end;
+}
+
 .align-center {
     display: flex;
     align-items: center;
@@ -418,6 +424,22 @@ h1 {
 .country-details__border {
     padding: 0.5rem 1.875rem;
     font-size: var(--fs-border-country);
+}
+
+
+
+.pagination__button {
+    --gap: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--clr-primary-100);
+    cursor: pointer;
+    border: none;
+    
+
+}
+
+.pagination__button:disabled {
+    background-color: var(--clr-secondary-100);
 }
 
 
