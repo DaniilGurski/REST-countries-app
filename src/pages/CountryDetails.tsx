@@ -5,6 +5,7 @@ import { countryAtom, viewedCountryNameAtom } from "../services/state/atoms";
 import { useEffect } from "react";
 import { UseQueryResult } from "@tanstack/react-query";
 import { isValidCountryData } from "../types/typeguards";
+import { convertParam } from "../utils/formatting";
 
 export default function CountryDetails() {
     const { countryName } = useParams();
@@ -15,7 +16,8 @@ export default function CountryDetails() {
     }
 
     useEffect(() => {
-        setViewedCountryName(countryName);
+        setViewedCountryName(convertParam(countryName));
+        console.log(convertParam(countryName))
     }, [countryName]);
     
     const { data, isLoading, refetch}: UseQueryResult = useAtomValue(countryAtom);

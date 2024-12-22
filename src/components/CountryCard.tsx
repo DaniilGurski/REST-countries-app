@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function CountryCard({ data }: countryCardProps) {
     const { flags, name, population, region, capital } = data;
-
     return (
         <Link to={`/country/${name.common}`}>
             <article className="country-card box-shadow bg-primary-100">
