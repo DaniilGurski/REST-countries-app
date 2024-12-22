@@ -20,6 +20,7 @@ Applications with the ability to search and view country information based on RE
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
+- [Vite](https://vite.dev/) - Dev server
 
 
 ### What I learned
