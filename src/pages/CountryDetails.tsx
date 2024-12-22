@@ -17,7 +17,6 @@ export default function CountryDetails() {
 
     useEffect(() => {
         setViewedCountryName(convertParam(countryName));
-        console.log(convertParam(countryName))
     }, [countryName]);
     
     const { data, isLoading, refetch}: UseQueryResult = useAtomValue(countryAtom);
