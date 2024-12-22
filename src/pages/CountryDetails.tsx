@@ -88,7 +88,6 @@ export default function CountryDetails() {
                             </ul>
                         </div>
 
-
                         <div className="country-details__border-countries grid-flow">
                             <span className="fs-fixed-100 fw-semi-bold">  Border Countries: </span>
 
