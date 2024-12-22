@@ -1,7 +1,7 @@
 import { atom } from "jotai";
 import { atomWithQuery } from "jotai-tanstack-query";
 import { fetchCountriesByRegion, fetchCountryDetails } from "../api";
-import { Country, CountryExtended } from "../../types/state/country";
+import { Country } from "../../types/state/country";
 
 export const regionAtom = atom("");
 export const viewedCountryNameAtom = atom("");
