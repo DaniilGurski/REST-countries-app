@@ -90,7 +90,7 @@ export default function CountryDetails() {
 
 
                         <div className="country-details__border-countries grid-flow">
-                            <span className="fs-fixed-100 fw-extra-bold">  Border Countries: </span>
+                            <span className="fs-fixed-100 fw-semi-bold">  Border Countries: </span>
 
                             <ul className="flex-flow" role="list">
                                 {
@@ -106,6 +106,3 @@ export default function CountryDetails() {
         </div>
     )
 }
-
-// TODO: better styling ?
-// TODO: control font sizes

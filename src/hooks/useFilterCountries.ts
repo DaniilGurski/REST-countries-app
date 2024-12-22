@@ -10,7 +10,7 @@ export function useFilteredCountries() {
     const [filteredCountries, setFilteredCountries] = useAtom(filteredCountriesAtom);
 
     useEffect(() => {
-        if (isValidCountries(countries) && searchedCountryName) {
+        if (isValidCountries(countries)) {
             const filtered = countries.filter((country) => {
                 const commonCountryName = country.name.common;
                 return commonCountryName.toLowerCase().includes(searchedCountryName.toLowerCase());
@@ -19,5 +19,6 @@ export function useFilteredCountries() {
             setFilteredCountries(filtered);
         }
     }, [countries, searchedCountryName, setFilteredCountries]);
+
     return filteredCountries;
 }

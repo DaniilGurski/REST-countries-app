@@ -8,8 +8,8 @@ import Filter from '../components/Filter'
 import CountryCard from '../components/CountryCard'
 
 export default function AllCountriesView() {
-    const { data: countries, refetch}: { data: unknown, refetch: () => {}} = useAtomValue(countriesAtom); 
-    const [searchedCountryName, setSearchedCountryName] = useAtom(searchedCountryNameAtom);
+    const { refetch }: { data: unknown, refetch: () => {}} = useAtomValue(countriesAtom); 
+    const setSearchedCountryName = useSetAtom(searchedCountryNameAtom);
     const [region] = useAtom(regionAtom);
     const filteredCountries = useFilteredCountries();
 
@@ -40,7 +40,7 @@ export default function AllCountriesView() {
                     {
                         filteredCountries.map((country) => {
                             return (
-                                <li> 
+                                <li key={country.name.common}> 
                                     <CountryCard
                                     key={country.name.toString()}
                                     data={country}
