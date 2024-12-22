@@ -73,7 +73,7 @@ export default function CountryDetails() {
                                 <li><span className="fw-semi-bold"> Top Level Domain: {tld} </span></li>
                                 <li className="flex-flow">
                                     <span className="fw-semi-bold"> Currencies: </span> 
-                                    <ul role="list">
+                                    <ul className="enumeration-list" role="list">
                                         {
                                             Object.keys(currencies).map(currency => <li key={currency}> {currencies[currency].name} </li>)
                                         } 
@@ -81,7 +81,7 @@ export default function CountryDetails() {
                                 </li>
                                 <li className="flex-flow">
                                     <span className="fw-semi-bold"> Languages: </span> 
-                                    <ul className="flex-flow" role="list">
+                                    <ul className="enumeration-list flex-flow" role="list">
                                         {
                                             Object.keys(languages).map(language => <li key={language}> {languages[language]} </li>)
                                         } 

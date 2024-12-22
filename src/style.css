@@ -434,9 +434,8 @@ h1 {
     background-color: var(--clr-primary-100);
     cursor: pointer;
     border: none;
-    
-
 }
+
 
 .pagination__button:disabled {
     background-color: var(--clr-secondary-100);
@@ -444,5 +443,7 @@ h1 {
 
 
 .enumeration-list {
-    
+    > li:not(:last-of-type)::after {
+        content: ",";
+    }
 }
